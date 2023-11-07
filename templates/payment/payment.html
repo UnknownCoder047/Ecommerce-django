@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/media/images/favicon.ico">
+
+<!-- jQuery -->
+<script src="/media/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+<!-- Bootstrap4 files-->
+<script src="/media/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<link href="/media/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+<!-- Font awesome 5 -->
+<link href="/media/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+
+<!-- custom style -->
+<link href="/media/css/ui.css" rel="stylesheet" type="text/css"/>
+<link href="/media/css/responsive.css" rel="stylesheet" />
+
+<!-- custom javascript -->
+<script src="/media/js/script.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+}); 
+// jquery end
+</script>
+
+</head>
+<body>
+    <!-- Replace "test" with your own sandbox Business account app client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AYFwTdp8fOh3kjuBKVO7rhK4nIuGXjceIen2ClWejJJnvBJtkKW_j-5fBCLdwfpbf3gYYBHbZWtXYCEG&currency=USD"> </script>
+    <!-- Set up a container element for the button -->
+
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+        <div class="card-body">
+        <h4 class="card-title mb-4">Make Payment</h4>
+        <div id="paypal-button-container"></div>
+        {% comment %} <form action="/paymentdone?type={{type}}&product={{product}}&amt={{amt}}" id="myforms"></form> {% endcomment %}
+        </div> <!-- card-body.// -->
+    </div> <!-- card .// -->
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '{{amt}}'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                    //document.getElementById("myforms").submit();
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+  </body>
+</html>

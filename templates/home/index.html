@@ -1,0 +1,295 @@
+{% extends 'base/base.html' %}
+
+{% block start %}
+
+<div class="container mt-3 ">
+        <p class="title-text"><h1>Mens wear</h1></p>
+    <div class="container mt-3 pt-5">
+        <div class="row mb-3">
+            <p class="title-text"><h2>Mens Tshirts</h2></p>
+        </div>
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.category_name == "tshirts" %}
+            <div class="col-md-3">
+                <figure class="card card-product-grid">
+                    <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                    <figcaption class="info-wrap border-top">
+                        <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                        <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                    </figcaption>
+                </figure> <!-- card // -->
+            </div> <!-- col.// -->
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="container mt-5 pt-5">
+        <div class="row mb-3">
+            <p class="title-text"><h2>Mens shirts</h2></p>
+        </div>
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.category_name == "shirts" %}
+            <div class="col-md-3">
+                <figure class="card card-product-grid">
+                    <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                    <figcaption class="info-wrap border-top">
+                        <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                        <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                    </figcaption>
+                </figure> <!-- card // -->
+            </div> <!-- col.// -->
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="container mt-5 pt-5">
+        <div class="row mb-3">
+            <p class="title-text"><h2>Mens Jeans</h2></p>
+        </div>
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.category_name == "Mens Jeans" %}
+            <div class="col-md-3">
+                <figure class="card card-product-grid">
+                    <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                    <figcaption class="info-wrap border-top">
+                        <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                        <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                    </figcaption>
+                </figure> <!-- card // -->
+            </div> <!-- col.// -->
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+</div>
+
+{% comment %} Women wear {% endcomment %}
+
+<div class="container mt-3 ">
+    <p class="title-text"><h1>Womens wear</h1></p>
+<div class="container mt-3 pt-5">
+    <div class="row mb-3">
+        <p class="title-text"><h2>Women complete collection</h2></p>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "women wear" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container mt-5 pt-5">
+    <div class="row mb-3">
+        <p class="title-text"><h2>Women Top wear</h2></p>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "women top" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container mt-5 pt-5">
+    <div class="row mb-3">
+        <p class="title-text"><h2>Women Bottom Wear</h2></p>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "women bottom" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+</div>
+
+{% comment %} Necklace & Bracelet {% endcomment %}
+
+<div class="container mt-3 ">
+    <p class="title-text"><h1>Necklace & Bracelet</h1></p>
+<div class="container mt-3 pt-5">
+    <div class="row mb-3">
+        <p class="title-text"><h2>Necklace</h2></p>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "women necklace" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container mt-5 pt-5">
+    <div class="row mb-3">
+        <p class="title-text"><h2>Bracelets</h2></p>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "men necklace" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+
+{% comment %} Watches {% endcomment %}
+
+<div class="container mt-3 ">
+    <p class="title-text"><h1>Watches</h1></p>
+<div class="container mt-3 pt-5">
+    <div class="row mb-3">
+        <p class="title-text"><h2>For Men</h2></p>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "watch men" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container mt-5 pt-5">
+    <div class="row mb-3">
+        <p class="title-text"><h2>For Women</h2></p>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "watch women" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+
+{% comment %} Sunglasses {% endcomment %}
+
+<div class="container mt-3 ">
+    <p class="title-text"><h1>Sunglasses</h1></p>
+<div class="container mt-3 pt-5">
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "sunglass" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+
+{% comment %} Shoes {% endcomment %}
+
+<div class="container mt-3 ">
+    <p class="title-text"><h1>Shoes</h1></p>
+<div class="container mt-3 pt-5">
+    <div class="row">
+        {% for product in products %}
+        {% if product.category.category_name == "shoes" %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_products' product.slug %}" class="title"><b> {{product.product_name}}</b> </a>
+                    <div class="price mt-2">Rs.{{product.price}}.00 </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+
+
+{% endblock  %}
